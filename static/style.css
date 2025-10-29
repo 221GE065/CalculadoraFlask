@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f8fa;
+    background-color: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,18 +8,20 @@ body {
 }
 
 .container {
-    background: white;
+    background-color: white;
     padding: 2em;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
     text-align: center;
+    width: 300px;
 }
 
 input, select, button {
-    padding: 0.5em;
-    margin: 0.5em;
-    border-radius: 6px;
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
     border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button {
@@ -34,7 +36,7 @@ button:hover {
 }
 
 .resultado {
-    margin-top: 1em;
-    font-size: 1.2em;
+    margin-top: 15px;
+    font-size: 18px;
     color: #333;
 }
