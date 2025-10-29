@@ -7,9 +7,9 @@ def index():
     resultado = None
     if request.method == "POST":
         try:
-            num1 = float(request.form["num1"])
-            num2 = float(request.form["num2"])
-            operacion = request.form["operacion"]
+            num1 = float(request.form.get("num1"))
+            num2 = float(request.form.get("num2"))
+            operacion = request.form.get("operacion")
 
             if operacion == "suma":
                 resultado = num1 + num2
@@ -18,12 +18,18 @@ def index():
             elif operacion == "multiplicacion":
                 resultado = num1 * num2
             elif operacion == "division":
-                resultado = num1 / num2 if num2 != 0 else "Error: División entre cero"
+                if num2 != 0:
+                    resultado = num1 / num2
+                else:
+                    resultado = "Error: división entre cero"
+            else:
+                resultado = "Operación no válida"
 
-        except ValueError:
-            resultado = "Error: Ingresa solo números válidos"
-    
+        except Exception:
+            resultado = "Error: ingresa solo números válidos"
+
     return render_template("index.html", resultado=resultado)
 
 if __name__ == "__main__":
     app.run(debug=True)
+
